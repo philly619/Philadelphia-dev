@@ -1,163 +1,277 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Philadelphia Chikalimba | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <h2 class="logo">Philadelphia Chikalimba</h2>
+body {
+  color: #fff;              /* White text for strong contrast on black */
+  line-height: 1.6;
+  background: #000000;     /* SOLID BLACK background — no gradient, no split */
+}
 
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#difference">What Makes Me Different</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3, h4, .logo {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
 
-  <!-- Home Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <img src="photo.jpg" alt="Philadelphia Chikalimba" class="profile-photo" />
+h1 {
+  font-size: 45px;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 
-      <div class="intro-text">
-        <h1>Philadelphia Chikalimba</h1>
-        <h3>Commerce & Tech Student</h3>
+h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
 
-        <p>
-          I am a commerce student building a brand that bridges business and technology.
-          I enjoy learning new skills, solving problems, and stepping outside my comfort zone.
-          My goal is to combine commerce knowledge with technology to create solutions
-          that help businesses grow and operate efficiently.
-        </p>
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
 
-        <button id="welcomeBtn">Click to Learn More</button>
-      </div>
-    </div>
-  </header>
+p {
+  color: #dddddd;
+  font-size: 18px;
+}
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
+/* ---------- NAVIGATION ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
 
-    <p>
-      I am passionate about business, technology, and innovation.
-      I believe in hard work, continuous learning, and using technology
-      to solve real-world business problems.
-    </p>
+.logo {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
 
-    <p>
-      I am driven by curiosity, discipline, and the desire to become
-      a professional who can excel in both commerce and tech industries.
-    </p>
-  </section>
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
+.nav-links a {
+  text-decoration: none;
+  color: #f0f0f0;
+  font-weight: bold;
+  transition: 0.3s;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+}
 
-    <div class="skills-container">
-      <div class="skill-card">Attention to Detail</div>
-      <div class="skill-card">Great Communication Skills</div>
-      <div class="skill-card">Excellent Public Speaker</div>
-      <div class="skill-card">Understanding of Accounting Standards</div>
-      <div class="skill-card">Basic Coding</div>
-      <div class="skill-card">Problem Solving</div>
-      <div class="skill-card">Teamwork</div>
-    </div>
-  </section>
+.nav-links a:hover {
+  color: white;
+  border-bottom-color: #ffffff;
+}
 
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <h2>Projects</h2>
+/* ---------- HERO SECTION ---------- */
+.hero {
+  padding: 60px 10%;
+}
 
-    <div class="project-card">
-      <h3>Realtime Inventory & Sales Tracker</h3>
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
 
-      <p>
-        A business management web application that tracks products,
-        monitors inventory levels, calculates revenue trends,
-        and gives low-stock alerts for small business owners.
-      </p>
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.1);
+  background: #1a1a1a;
+}
 
-      <p class="tech-used">
-        Technologies Used: HTML, CSS, JavaScript, Python
-      </p>
-    </div>
+.intro-text {
+  max-width: 600px;
+}
 
-    <div class="project-card">
-      <h3>Business Database System</h3>
+.intro-text h3 {
+  color: #cccccc;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
 
-      <p>
-        Created a database system for storing customer information,
-        tracking transactions, and organizing business records efficiently.
-      </p>
+/* ---------- BUTTONS ---------- */
+button {
+  padding: 12px 28px;
+  border: none;
+  background-color: #ffffff;
+  color: #000000;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
-      <p class="tech-used">
-        Technologies Used: SQL, HTML, CSS
-      </p>
-    </div>
-  </section>
+button:hover {
+  background-color: #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
 
-  <!-- What Makes Me Different -->
-  <section id="difference" class="section">
-    <h2>What Makes Me Different</h2>
+/* ---------- GENERAL SECTIONS ---------- */
+.section {
+  padding: 70px 10%;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
 
-    <div class="difference-box">
-      <p>
-        What sets me apart from many commerce and tech students is my ability
-        to combine business thinking with technical problem-solving.
-      </p>
+.section:first-of-type {
+  border-top: none;
+}
 
-      <p>
-        I constantly challenge myself to learn quickly, improve my skills,
-        and step outside my comfort zone. I focus on excellence, creativity,
-        and building practical solutions that can help businesses succeed.
-      </p>
-    </div>
-  </section>
+/* ---------- SKILLS GRID ---------- */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
 
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2>Contact Me</h2>
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(2px);
+  padding: 25px 20px;
+  border-radius: 24px;
+  text-align: center;
+  transition: 0.25s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
 
-    <p>Feel free to reach out through the platforms below.</p>
+.skill-card:hover {
+  transform: translateY(-6px);
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255,255,255,0.3);
+}
 
-    <ul class="contact-list">
-      <li>
-        Email:
-        <a href="mailto:phil.chikalimba@gmail.com">
-          phil.chikalimba@gmail.com
-        </a>
-      </li>
+.skill-card p {
+  color: #cccccc;
+}
 
-      <li>
-        Instagram:
-        <a href="https://www.instagram.com/philadelphiachikalimba?igsh=0Ghucnkxb2ZpOHd5" target="_blank">
-          @philadelphiachikalimba
-        </a>
-      </li>
+/* ---------- PROJECTS ---------- */
+.project-card {
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 28px;
+  border-radius: 24px;
+  margin-bottom: 28px;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: 0.2s;
+}
 
-      <li>
-        GitHub:
-        <a href="https://github.com/philly619" target="_blank">
-          github.com/philly619
-        </a>
-      </li>
-    </ul>
-  </section>
+.project-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255,255,255,0.2);
+}
 
-  <!-- Footer -->
-  <footer>
-    <p>Built and Designed by Philadelphia Chikalimba © 2026</p>
-  </footer>
+.tech-used {
+  margin-top: 14px;
+  font-style: italic;
+  color: #bbbbbb;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+/* ---------- DIFFERENCE / HIGHLIGHT BOX ---------- */
+.difference-box {
+  background-color: rgba(255, 255, 255, 0.06);
+  padding: 35px;
+  border-radius: 28px;
+  border-left: 5px solid #ffffff;
+}
+
+.difference-box p {
+  font-size: 1.1rem;
+  color: #eaeaea;
+}
+
+/* ---------- CONTACT SECTION ---------- */
+.contact-list {
+  list-style: none;
+  text-align: center;
+}
+
+.contact-list li {
+  margin: 18px 0;
+  font-size: 18px;
+}
+
+.contact-list a {
+  color: #ffffff;
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255,255,255,0.4);
+  transition: 0.2s;
+}
+
+.contact-list a:hover {
+  color: #dddddd;
+  border-bottom-color: white;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  text-align: center;
+  padding: 28px 20px;
+  background-color: #0a0a0a;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* ---------- RESPONSIVE DESIGN ---------- */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .navbar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 18px 5%;
+  }
+  
+  .nav-links {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .intro-text h1 {
+    font-size: 35px;
+  }
+  
+  .section {
+    padding: 50px 6%;
+  }
+  
+  .profile-photo {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .difference-box {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
