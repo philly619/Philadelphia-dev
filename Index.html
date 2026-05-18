@@ -1,137 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Philadelphia Chikalimba</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Philadelphia Chikalimba — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
-
 <body>
 
-  <header>
-    <img src="photo.jpg" alt="Philadelphia Chikalimba">
-    <h1>Philadelphia Chikalimba</h1>
-    <p class="title">Commerce and Tech Student</p>
-
-    <div class="intro">
-      <h2>Home</h2>
-
-      <p>
-        I am a commerce student building a brand that bridges business and technology.
-        I combine business knowledge with technical skills to create practical digital
-        solutions that solve real-world problems for businesses and individuals.
-      </p>
-
-      <p>
-        What makes me different from other commerce and tech students is my willingness
-        to step outside my comfort zone, learn quickly, and continuously improve myself.
-        I pay close attention to detail, communicate effectively, and focus on producing
-        high-quality work in everything I do.
-      </p>
-
-      <p>
-        My goal is to grow into a professional who understands both business operations
-        and technology development, allowing me to create smart systems that improve
-        efficiency and decision-making.
-      </p>
-    </div>
-  </header>
-
-  <section id="about">
-    <h2>Biodata</h2>
-
-    <p>
-      I am a commerce and tech student passionate about innovation, business growth,
-      and software development. I enjoy learning new technologies and using them
-      together with commerce knowledge to solve business challenges.
-    </p>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-
-    <ul>
-      <li>Paying attention to details</li>
-      <li>Great communication skills</li>
-      <li>Excellent public speaker</li>
-      <li>Understanding of accounting standards</li>
-      <li>Basic coding</li>
-      <li>Database creation and management</li>
-      <li>Problem solving</li>
-      <li>Team collaboration</li>
+  <!-- ── NAVIGATION ── -->
+  <nav id="navbar">
+    <div class="nav-logo">PC</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#achievements">Achievements</a></li>
+      <li><a href="#difference">Why Me</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project-card">
-      <h3>Realtime Inventory and Sales Tracker</h3>
-
-      <p>
-        This web app uses HTML, CSS, and JavaScript to display a product catalog
-        and sales dashboard, while a Python backend processes inventory updates.
-        The system provides live revenue trends, low-stock alerts, and restock
-        recommendations to help small business owners make better decisions.
-      </p>
-
-      <p class="tags">
-        Skills used: HTML, CSS, JavaScript, Python
-      </p>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
+  </nav>
 
-    <div class="project-card">
-      <h3>Business Database System</h3>
-
-      <p>
-        Designed and created a database system for storing customer records,
-        sales information, and inventory data. The project improved data
-        organization, quick retrieval of information, and business reporting.
-      </p>
-
-      <p class="tags">
-        Skills used: SQL, Database Design, Problem Solving
-      </p>
+  <!-- ── HERO / HOME ── -->
+  <section id="home" class="hero">
+    <div class="hero-bg-split"></div>
+    <div class="hero-content">
+      <div class="hero-photo-wrap">
+        <div class="photo-ring"></div>
+        <img src="photo.jpg" alt="Philadelphia Chikalimba" class="hero-photo" />
+        <div class="photo-accent"></div>
+      </div>
+      <div class="hero-text">
+        <p class="hero-eyebrow">Commerce &amp; Technology</p>
+        <h1 class="hero-name">Philadelphia<br /><span>Chikalimba</span></h1>
+        <p class="hero-tagline">
+          Bridging the worlds of <em>business strategy</em> and <em>digital innovation</em> — one project at a time.
+        </p>
+        <p class="hero-bio">
+          I am a commerce student building a brand that bridges business and tech. What sets me apart is my drive to step outside my comfort zone, learn fast, and always push myself to do things to the best of my ability. I believe the future belongs to those who understand both numbers and code — and I am becoming exactly that.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-outline">Get In Touch</a>
+        </div>
+      </div>
     </div>
-
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
+  <!-- ── SKILLS ── -->
+  <section id="skills" class="section skills-section">
+    <div class="section-label">What I Bring</div>
+    <h2 class="section-title">Skills &amp; Strengths</h2>
+    <div class="skills-grid">
 
-    <p>Feel free to reach out.</p>
+      <div class="skill-card" data-delay="0">
+        <div class="skill-icon">◎</div>
+        <h3>Attention to Detail</h3>
+        <p>Precision in every task — from financial reports to lines of code, nothing slips through unnoticed.</p>
+      </div>
 
-    <ul class="contact-list">
-      <li>
-        <a href="mailto:phil.chikalimba@gmail.com">
-          phil.chikalimba@gmail.com
-        </a>
-      </li>
+      <div class="skill-card" data-delay="1">
+        <div class="skill-icon">◈</div>
+        <h3>Communication</h3>
+        <p>Translating complex ideas into clear, compelling language — whether in boardrooms or Git commits.</p>
+      </div>
 
-      <li>
-        <a href="https://www.instagram.com/philadelphiachikalimba?igsh=0Ghucnkxb2ZpOHd5"
-           target="_blank"
-           rel="noopener noreferrer">
-          Instagram
-        </a>
-      </li>
+      <div class="skill-card" data-delay="2">
+        <div class="skill-icon">◉</div>
+        <h3>Public Speaking</h3>
+        <p>Confident presenter who commands attention and delivers ideas that resonate and persuade.</p>
+      </div>
 
-      <li>
-        <a href="https://github.com/philly619"
-           target="_blank"
-           rel="noopener noreferrer">
-          GitHub
-        </a>
-      </li>
-    </ul>
+      <div class="skill-card" data-delay="3">
+        <div class="skill-icon">◍</div>
+        <h3>Accounting Standards</h3>
+        <p>Solid foundation in financial reporting principles, enabling data-driven business decisions.</p>
+      </div>
+
+      <div class="skill-card" data-delay="4">
+        <div class="skill-icon">◇</div>
+        <h3>Coding (HTML, CSS, JS, Python)</h3>
+        <p>Building functional, beautiful digital products from scratch — and improving existing ones.</p>
+      </div>
+
+      <div class="skill-card" data-delay="5">
+        <div class="skill-icon">◆</div>
+        <h3>Fast Learning</h3>
+        <p>Adaptable and curious — picking up new tools, frameworks, and concepts with speed and depth.</p>
+      </div>
+
+    </div>
   </section>
 
-  <footer>
-    <p>Portfolio created by Philadelphia Chikalimba © 2026</p>
+  <!-- ── PROJECTS ── -->
+  <section id="projects" class="section projects-section">
+    <div class="section-label">What I've Built</div>
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-list">
+
+      <div class="project-item" data-delay="0">
+        <div class="project-number">01</div>
+        <div class="project-body">
+          <h3>Realtime Inventory &amp; Sales Tracker</h3>
+          <p>
+            A full-stack web application designed for small business owners. The frontend, built with HTML and CSS, displays a live product catalog and sales dashboard. A Python backend processes inventory updates in realtime, while a Java service calculates live revenue trends and low-stock alerts. Business owners receive instant visual warnings and automated restock recommendations — enabling data-driven purchasing decisions that eliminate lost sales.
+          </p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Python</span><span>Java</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-delay="1">
+        <div class="project-number">02</div>
+        <div class="project-body">
+          <h3>Business Database Design &amp; Management</h3>
+          <p>
+            Designed and built a structured relational database for a small enterprise, including entity-relationship modeling, table design, and query optimization. The database tracks sales, customers, suppliers, and inventory — providing management with a single source of truth for all business operations.
+          </p>
+          <div class="project-tags">
+            <span>SQL</span><span>Database Design</span><span>ER Modeling</span><span>Business Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-item" data-delay="2">
+        <div class="project-number">03</div>
+        <div class="project-body">
+          <h3>Personal Portfolio Website</h3>
+          <p>
+            Designed and developed this very portfolio from scratch — no templates, no drag-and-drop builders. Built with semantic HTML, handcrafted CSS animations, and vanilla JavaScript to showcase the intersection of commerce knowledge and coding ability.
+          </p>
+          <div class="project-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>UI/UX Design</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ACHIEVEMENTS ── -->
+  <section id="achievements" class="section achievements-section">
+    <div class="section-label">Education &amp; Background</div>
+    <h2 class="section-title">Achievements</h2>
+
+    <div class="achievements-layout">
+
+      <!-- EDUCATION COLUMN -->
+      <div class="ach-column">
+        <h3 class="ach-column-title">
+          <span class="ach-col-icon">◎</span> Education
+        </h3>
+        <div class="timeline">
+
+          <div class="timeline-item" data-delay="0">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">2024 — Present</span>
+              <h4>Bachelor of Commerce</h4>
+              <p class="timeline-place">University (Current)</p>
+              <p>Studying core commerce disciplines including accounting, finance, business law, and economics — while simultaneously developing technical skills in software development.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item" data-delay="1">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <span class="timeline-period">2019 — 2023</span>
+              <h4>Malawi School Certificate of Education (MSCE)</h4>
+              <p class="timeline-place">Secondary School</p>
+              <p>Completed secondary education with a strong performance in mathematics, business studies, and sciences — building the foundation for commerce and technology.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ACHIEVEMENTS COLUMN -->
+      <div class="ach-column">
+        <h3 class="ach-column-title">
+          <span class="ach-col-icon">◆</span> Milestones &amp; Certifications
+        </h3>
+        <div class="ach-cards">
+
+          <div class="ach-badge" data-delay="0">
+            <div class="ach-badge-icon">★</div>
+            <div class="ach-badge-text">
+              <h4>Full-Stack Web Development</h4>
+              <p>Built and deployed a complete web application combining HTML/CSS frontend with a Python backend — independently, as a first-year student.</p>
+            </div>
+          </div>
+
+          <div class="ach-badge" data-delay="1">
+            <div class="ach-badge-icon">◈</div>
+            <div class="ach-badge-text">
+              <h4>Database Design &amp; SQL</h4>
+              <p>Designed a normalised relational database for a real business use case, including ER diagrams, table relationships, and optimised queries.</p>
+            </div>
+          </div>
+
+          <div class="ach-badge" data-delay="2">
+            <div class="ach-badge-icon">◉</div>
+            <div class="ach-badge-text">
+              <h4>Self-Taught Coding</h4>
+              <p>Acquired practical coding skills in HTML, CSS, JavaScript, and Python through self-directed learning alongside a full commerce degree.</p>
+            </div>
+          </div>
+
+          <div class="ach-badge" data-delay="3">
+            <div class="ach-badge-icon">◇</div>
+            <div class="ach-badge-text">
+              <h4>Public Speaking &amp; Leadership</h4>
+              <p>Active participant in academic presentations and group leadership roles, demonstrating strong communication under pressure.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── WHY ME ── -->
+  <section id="difference" class="section difference-section">
+    <div class="section-label">My Edge</div>
+    <h2 class="section-title">What Makes Me Different</h2>
+    <div class="difference-grid">
+
+      <div class="difference-card highlight">
+        <h3>vs. Other Commerce Students</h3>
+        <p>
+          Most commerce students stay comfortable with spreadsheets and case studies. I go further — building actual software tools that automate the financial and business processes I study in class. I don't just analyse businesses; I build systems for them.
+        </p>
+      </div>
+
+      <div class="difference-card">
+        <h3>vs. Other Tech Students</h3>
+        <p>
+          Many developers can write code but struggle to connect it to business value. My commerce background means I understand cash flow, profitability, and strategy — so every product I build solves a real business problem, not just a technical one.
+        </p>
+      </div>
+
+      <div class="difference-card full-width">
+        <h3>The Rare Intersection</h3>
+        <p>
+          The most valuable professionals of tomorrow will not be pure engineers or pure business analysts — they will be fluent in both. I am actively building that dual fluency, combining accounting rigour, strategic thinking, and hands-on coding into a unique profile that is genuinely rare at this stage of a career.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="section contact-section">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Contact</h2>
+    <p class="contact-intro">I am always open to new conversations, collaborations, and opportunities. Feel free to reach out through any of the channels below.</p>
+    <div class="contact-links">
+
+      <a href="mailto:phil.chikalimba@gmail.com" class="contact-card" id="email-card">
+        <div class="contact-icon">✉</div>
+        <div class="contact-info">
+          <span class="contact-type">Email</span>
+          <span class="contact-value">phil.chikalimba@gmail.com</span>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+
+      <a href="https://www.instagram.com/philadelphiachikalimba?igsh=0Ghucnkxb2ZpOHd5" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <div class="contact-icon">◈</div>
+        <div class="contact-info">
+          <span class="contact-type">Instagram</span>
+          <span class="contact-value">@philadelphiachikalimba</span>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+
+      <a href="https://github.com/philly619" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <div class="contact-icon">⌥</div>
+        <div class="contact-info">
+          <span class="contact-type">GitHub</span>
+          <span class="contact-value">github.com/philly619</span>
+        </div>
+        <div class="contact-arrow">→</div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-left">
+        <span class="footer-logo">PC</span>
+        <p>Philadelphia Chikalimba<br /><em>Commerce &amp; Technology</em></p>
+      </div>
+      <div class="footer-center">
+        <p class="footer-credit">Designed &amp; built by <strong>Philadelphia Chikalimba</strong></p>
+        <p class="footer-year">© 2026 — All rights reserved</p>
+      </div>
+      <div class="footer-right">
+        <a href="#home" class="back-to-top">Back to top ↑</a>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 </html>
