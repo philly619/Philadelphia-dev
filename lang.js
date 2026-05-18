@@ -1,4 +1,3 @@
-
 window.addEventListener("load", () => {
     console.log("Philadelphia Chikalimba Portfolio Loaded Successfully");
 });
