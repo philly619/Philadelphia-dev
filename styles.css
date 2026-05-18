@@ -1,90 +1,209 @@
-// Wait for DOM to fully load
-document.addEventListener('DOMContentLoaded', () => {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  // 1. Smooth scroll for any anchor links (just in case you add internal nav later)
-  const allLinks = document.querySelectorAll('a[href^="#"]');
-  allLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      const targetId = this.getAttribute('href');
-      if (targetId !== '#') {
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          e.preventDefault();
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      }
-    });
-  });
+body {
+  color: #fff;
+  line-height: 1.6;
 
-  // 2. Dynamic year in footer (ensures 2026 or current year if needed)
-  const footerPara = document.querySelector('footer p');
-  if (footerPara) {
-    const currentYear = new Date().getFullYear();
-    // Only update if it's not already 2026 (your original says 2026, but let's future-proof)
-    if (!footerPara.innerHTML.includes('2026')) {
-      footerPara.innerHTML = `Built by Philadelphia Chikalimba © ${currentYear}`;
-    } else {
-      // Optional: you can keep 2026 as is, or update dynamically
-      // I'll leave your original year but add dynamic option if you prefer.
-      // For respect to your code: keep 2026, but comment shows flexibility.
-    }
+  /* Split Background */
+  background: linear-gradient(
+    to bottom,
+    khaki 35%,
+    #5c4033 35%
+  );
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 10%;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+  color: #3b2a20;
+  font-size: 24px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #3b2a20;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px 10%;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 6px solid #5c4033;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.intro-text {
+  max-width: 600px;
+}
+
+.intro-text h1 {
+  color: #3b2a20;
+  font-size: 45px;
+}
+
+.intro-text h3 {
+  color: #5c4033;
+  margin-bottom: 15px;
+}
+
+.intro-text p {
+  color: #2b1d15;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  background-color: #5c4033;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #3b2a20;
+}
+
+/* General Sections */
+.section {
+  padding: 70px 10%;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 36px;
+  color: khaki;
+}
+
+/* Skills */
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Projects */
+.project-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.project-card h3 {
+  margin-bottom: 15px;
+  color: khaki;
+}
+
+.tech-used {
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* Difference Section */
+.difference-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Contact */
+.contact-list {
+  list-style: none;
+  text-align: center;
+}
+
+.contact-list li {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+.contact-list a {
+  color: khaki;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #3b2a20;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
   }
 
-  // 3. Interactive hover effect for project cards via console log (just for fun)
-  const projectCards = document.querySelectorAll('.project-card');
-  projectCards.forEach((card, index) => {
-    card.addEventListener('mouseenter', () => {
-      // Adds a subtle shadow effect (already in CSS) but also logs
-      console.log(`📍 Viewing project: ${card.querySelector('h3')?.innerText || 'Project ' + (index+1)}`);
-    });
-  });
-
-  // 4. Contact button click message (friendly and professional)
-  const contactLinks = document.querySelectorAll('.contact-list a');
-  contactLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      // Don't interrupt navigation, just show a small console message
-      const platform = link.closest('li')?.innerText.trim() || 'link';
-      console.log(`🔗 You're about to connect via ${platform}`);
-    });
-  });
-
-  // 5. Small "welcome" message in console (shows your brand)
-  console.log('%c✨ Philadelphia Chikalimba Portfolio ✨', 'color: #8B4513; font-size: 16px; font-weight: bold;');
-  console.log('%cBridging commerce and tech | Database + realtime projects', 'color: #F0E68C; background: #5c2e0e; padding: 2px 6px; border-radius: 8px;');
-  
-  // 6. Optional: dynamic skill tag effect (just a micro-interaction)
-  const skillItems = document.querySelectorAll('.skills-list li');
-  skillItems.forEach(skill => {
-    skill.addEventListener('click', () => {
-      // subtle alert-free interaction: logs
-      console.log(`💡 Skill selected: ${skill.innerText.replace('✅', '').replace('🗣️', '').replace('🎤', '').trim()}`);
-    });
-  });
-
-  // 7. Ensure the profile image doesn't break layout if missing (graceful fallback)
-  const profileImg = document.querySelector('.profile-photo');
-  if (profileImg) {
-    profileImg.addEventListener('error', () => {
-      console.warn('⚠️ Profile photo not found. Please add a photo.jpg file in the same folder.');
-      profileImg.style.opacity = '0.6';
-      profileImg.alt = 'Philadelphia Chikalimba (photo missing)';
-    });
+  .nav-links {
+    display: none;
   }
 
-  // 8. Optional: Highlight "What Makes Me Different" cards on click for interactivity
-  const diffCards = document.querySelectorAll('.diff-card');
-  diffCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const title = card.querySelector('h3')?.innerText;
-      console.log(`📌 Highlighting: ${title}`);
-    });
-  });
-
-  // 9. Small scroll animation trigger — if you want to add reveal later, but lightweight.
-  // Just a console marker to show script is active.
-  console.log('✅ Portfolio ready | Khaki + Brown split background active');
-});
+  .intro-text h1 {
+    font-size: 35px;
+  }
+}
