@@ -1,424 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Portfolio | Midnight Edition</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
-
-    body {
-      color: #fff;              /* White text for strong contrast on black */
-      line-height: 1.6;
-      background: #000000;     /* SOLID BLACK background — removed split gradient entirely */
-    }
-
-    /* Navigation */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 10%;
-      background-color: rgba(255, 255, 255, 0.05); /* subtle dark translucent, fits black bg */
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .logo {
-      color: #ffffff;
-      font-size: 26px;
-      font-weight: bold;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      list-style: none;
-      gap: 2rem;
-    }
-
-    .nav-links li {
-      margin-left: 0; /* reset */
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: #f0f0f0;
-      font-weight: bold;
-      transition: 0.3s;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-    }
-
-    .nav-links a:hover {
-      color: white;
-      border-bottom-color: #ffffff;
-    }
-
-    /* Hero Section */
-    .hero {
-      padding: 60px 10%;
-    }
-
-    .hero-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 50px;
-      flex-wrap: wrap;
-    }
-
-    /* profile image: modern white border accent works well on black */
-    .profile-photo {
-      width: 250px;
-      height: 250px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 6px solid #ffffff;        /* bright white border stands out on black */
-      box-shadow: 0 10px 25px rgba(0,0,0,0.5), 0 0 0 2px rgba(255,255,255,0.1);
-      background: #1a1a1a;
-    }
-
-    .intro-text {
-      max-width: 600px;
-    }
-
-    .intro-text h1 {
-      color: #ffffff;           /* pure white headline */
-      font-size: 45px;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .intro-text h3 {
-      color: #cccccc;           /* light grey, harmonious */
-      margin-bottom: 15px;
-      font-weight: 500;
-    }
-
-    .intro-text p {
-      color: #dddddd;           /* soft white/grey for readability */
-      margin-bottom: 20px;
-      font-size: 18px;
-    }
-
-    /* button redesigned for black background (elegant light contrast) */
-    button {
-      padding: 12px 28px;
-      border: none;
-      background-color: #ffffff;
-      color: #000000;
-      font-size: 16px;
-      font-weight: bold;
-      border-radius: 40px;
-      cursor: pointer;
-      transition: 0.3s;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    }
-
-    button:hover {
-      background-color: #e0e0e0;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-    }
-
-    /* General Sections */
-    .section {
-      padding: 70px 10%;
-      border-top: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .section h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 36px;
-      color: #ffffff;           /* white section titles */
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    /* Skills */
-    .skills-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 25px;
-    }
-
-    .skill-card {
-      background-color: rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(2px);
-      padding: 25px 20px;
-      border-radius: 24px;
-      text-align: center;
-      transition: 0.25s ease;
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .skill-card:hover {
-      transform: translateY(-6px);
-      background-color: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    .skill-card h3 {
-      margin-bottom: 12px;
-      color: #ffffff;
-    }
-
-    .skill-card p {
-      color: #cccccc;
-    }
-
-    /* Projects */
-    .project-card {
-      background-color: rgba(255, 255, 255, 0.06);
-      padding: 28px;
-      border-radius: 24px;
-      margin-bottom: 28px;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: 0.2s;
-    }
-
-    .project-card:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255,255,255,0.2);
-    }
-
-    .project-card h3 {
-      margin-bottom: 12px;
-      color: #ffffff;
-      font-size: 26px;
-    }
-
-    .tech-used {
-      margin-top: 14px;
-      font-style: italic;
-      color: #bbbbbb;
-    }
-
-    /* Difference Section */
-    .difference-box {
-      background-color: rgba(255, 255, 255, 0.06);
-      padding: 35px;
-      border-radius: 28px;
-      border-left: 5px solid #ffffff;
-    }
-
-    .difference-box p {
-      font-size: 1.1rem;
-      color: #eaeaea;
-    }
-
-    /* Contact */
-    .contact-list {
-      list-style: none;
-      text-align: center;
-    }
-
-    .contact-list li {
-      margin: 18px 0;
-      font-size: 18px;
-    }
-
-    .contact-list a {
-      color: #ffffff;
-      text-decoration: none;
-      border-bottom: 1px dotted rgba(255,255,255,0.4);
-      transition: 0.2s;
-    }
-
-    .contact-list a:hover {
-      color: #dddddd;
-      border-bottom-color: white;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 28px 20px;
-      background-color: #0a0a0a;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      color: #aaa;
-      font-size: 14px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-      }
-      
-      .navbar {
-        flex-direction: column;
-        gap: 12px;
-        padding: 18px 5%;
-      }
-      
-      .nav-links {
-        gap: 1.2rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      
-      .intro-text h1 {
-        font-size: 35px;
-      }
-      
-      .section {
-        padding: 50px 6%;
-      }
-      
-      .profile-photo {
-        width: 200px;
-        height: 200px;
-      }
-      
-      .difference-box {
-        padding: 25px;
-      }
-    }
-    
-    /* Additional refinement for consistent spacing */
-    .section:first-of-type {
-      border-top: none;
-    }
-    
-    .skill-card span, .project-card span {
-      display: inline-block;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Personal Portfolio</title>
+  <link rel="preconnect" href="[fonts.googleapis.com](https://fonts.googleapis.com)">
+  <link rel="preconnect" href="[fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
+  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap)" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="logo">YourName<span>.</span></a>
+      <nav class="site-nav" id="siteNav">
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-  <!-- Navigation Bar -->
-  <nav class="navbar">
-    <div class="logo">✦ LUMINA</div>
-    <ul class="nav-links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <!-- profile photo placeholder (using a stylish abstract avatar, but keep it relevant) -->
-      <img class="profile-photo" src="https://placehold.co/600x600/2c2c2c/white?text=MK&font=montserrat" alt="Profile portrait" 
-           onerror="this.src='https://randomuser.me/api/portraits/women/68.jpg'; this.onerror=null;">
-      <div class="intro-text">
-        <h1>Maya Krishnamoorthy</h1>
-        <h3>Creative Technologist & Frontend Architect</h3>
-        <p>Crafting digital experiences with precision. I turn complex ideas into fluid, human-centered interfaces. Based between minimalism and depth.</p>
-        <button id="contactBtn">Let's connect →</button>
+  <main>
+    <!-- Hero -->
+    <section id="home" class="section hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Hello, I’m</p>
+          <h1>Your Name</h1>
+          <p class="subtitle">Frontend Developer • UI Enthusiast • Problem Solver</p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="#contact" class="btn ghost">Contact Me</a>
+          </div>
+          <div class="socials">
+            <a href="#" aria-label="GitHub" class="social-link">GitHub</a>
+            <a href="#" aria-label="LinkedIn" class="social-link">LinkedIn</a>
+            <a href="#" aria-label="Twitter" class="social-link">Twitter</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="avatar">
+            <!-- Replace with your photo -->
+            <img src="[via.placeholder.com](https://via.placeholder.com/420x420.png?text=Your+Photo)" alt="Portrait of Your Name" />
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+      <a href="#about" class="scroll-indicator" aria-label="Scroll to About">Scroll</a>
+    </section>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <h2>⚡ Core competencies</h2>
-    <div class="skills-container">
-      <div class="skill-card">
-        <h3>React & Next.js</h3>
-        <p>Component-driven architectures, SSR, and performant UIs.</p>
+    <!-- About -->
+    <section id="about" class="section about">
+      <div class="container grid-2">
+        <div>
+          <h2>About Me</h2>
+          <p>
+            I’m a developer focused on building accessible, performant web experiences.
+            I love turning ideas into products with clean UI and maintainable code.
+          </p>
+          <p>
+            Outside of work, you’ll find me exploring design systems, contributing to open-source,
+            and learning new tools that improve the developer experience.
+          </p>
+          <a href="resume.pdf" class="btn" download>Download Resume</a>
+        </div>
+        <div class="about-cards">
+          <div class="about-card">
+            <h3>Experience</h3>
+            <p>2+ years building responsive web apps and component libraries.</p>
+          </div>
+          <div class="about-card">
+            <h3>Focus</h3>
+            <p>Frontend engineering, accessibility, and micro-interactions.</p>
+          </div>
+          <div class="about-card">
+            <h3>Stack</h3>
+            <p>HTML, CSS, JavaScript, React, Node, Git.</p>
+          </div>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>UI/UX Engineering</h3>
-        <p>From design tokens to accessible, responsive layouts.</p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <ul class="skill-list">
+          <li class="skill">
+            <span>HTML5</span>
+            <div class="bar" data-level="95"><span></span></div>
+          </li>
+          <li class="skill">
+            <span>CSS3</span>
+            <div class="bar" data-level="90"><span></span></div>
+          </li>
+          <li class="skill">
+            <span>JavaScript</span>
+            <div class="bar" data-level="85"><span></span></div>
+          </li>
+          <li class="skill">
+            <span>React</span>
+            <div class="bar" data-level="80"><span></span></div>
+          </li>
+          <li class="skill">
+            <span>Node.js</span>
+            <div class="bar" data-level="70"><span></span></div>
+          </li>
+        </ul>
       </div>
-      <div class="skill-card">
-        <h3>Node.js / Python</h3>
-        <p>Full-stack integration, REST APIs, and data flow.</p>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="[via.placeholder.com](https://via.placeholder.com/800x520.png?text=Project+One)" alt="Screenshot of Project One" />
+            <div class="card-body">
+              <h3>Project One</h3>
+              <p>A responsive web app with a custom component library and dark mode.</p>
+              <div class="tags">
+                <span>React</span><span>TypeScript</span><span>Tailwind</span>
+              </div>
+              <div class="actions">
+                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="[via.placeholder.com](https://via.placeholder.com/800x520.png?text=Project+Two)" alt="Screenshot of Project Two" />
+            <div class="card-body">
+              <h3>Project Two</h3>
+              <p>API-powered dashboard with charts, filters, and export features.</p>
+              <div class="tags">
+                <span>Vite</span><span>Vanilla JS</span><span>Chart.js</span>
+              </div>
+              <div class="actions">
+                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img src="[via.placeholder.com](https://via.placeholder.com/800x520.png?text=Project+Three)" alt="Screenshot of Project Three" />
+            <div class="card-body">
+              <h3>Project Three</h3>
+              <p>Landing page optimized for performance and accessibility.</p>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>Aria</span>
+              </div>
+              <div class="actions">
+                <a class="btn small" href="#" target="_blank" rel="noopener">Live</a>
+                <a class="btn small ghost" href="#" target="_blank" rel="noopener">Code</a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <div class="skill-card">
-        <h3>Tailwind + CSS Art</h3>
-        <p>Pixel-perfect styling, animations, and design systems.</p>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section contact">
+      <div class="container grid-2">
+        <div>
+          <h2>Contact</h2>
+          <p>Want to collaborate or have a project in mind? Let’s talk.</p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> you@example.com</li>
+            <li><strong>Location:</strong> Your City, Country</li>
+            <li><strong>Open to:</strong> Full-time, Freelance</li>
+          </ul>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required placeholder="Your name" />
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required placeholder="you@example.com" />
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Say hello..."></textarea>
+            <span class="error" aria-live="polite"></span>
+          </div>
+          <button type="submit" class="btn primary">Send Message</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <h2>✨ Selected projects</h2>
-    <div class="project-card">
-      <h3>Nebula Finance Dashboard</h3>
-      <p>Interactive analytics platform with real-time data visualization. Built with D3.js and React, deployed on Vercel. Reduced load time by 40%.</p>
-      <div class="tech-used">Tech: React, D3, Firebase, Tailwind</div>
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Your Name. All rights reserved.</p>
+      <a href="#home" class="to-top" aria-label="Back to top">↑</a>
     </div>
-    <div class="project-card">
-      <h3>Heritage AI — Art Recognizer</h3>
-      <p>Machine learning model that identifies traditional art motifs and generates contextual info. Featured in design week 2024.</p>
-      <div class="tech-used">Tech: Python, TensorFlow, Flask, OpenCV</div>
-    </div>
-    <div class="project-card">
-      <h3>Monochrome Design System</h3>
-      <p>A fully accessible component library with dark-first approach, used by 10+ internal products. Supports WCAG AAA contrast.</p>
-      <div class="tech-used">Tech: Storybook, CSS-in-JS, Figma API</div>
-    </div>
-  </section>
-
-  <!-- Difference Section (What makes me different) -->
-  <section class="section">
-    <h2>⎯ The difference ⎯</h2>
-    <div class="difference-box">
-      <p>I don't just write code — I shape digital narratives. My approach merges technical depth with visual clarity. On a pure black canvas, every element matters. I bring that philosophy into every project: minimal noise, maximum impact, and inclusive design for real humans.</p>
-      <p style="margin-top: 20px;">⚡ Zero split background. Pure focus. Your vision, elevated.</p>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section">
-    <h2>📬 Reach out</h2>
-    <ul class="contact-list">
-      <li>📧 <a href="mailto:hello@maya.design">hello@maya.design</a></li>
-      <li>🔗 <a href="#">linkedin.com/in/maya-k</a></li>
-      <li>🐙 <a href="#">github.com/mayacreates</a></li>
-      <li>🌐 <a href="#">portfolio midnight edition</a></li>
-    </ul>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 Maya Krishnamoorthy — Black canvas, white light. No split backgrounds, pure minimalism.</p>
-    <p style="margin-top: 8px; font-size: 12px;">✦ Background: #000000 | Text: #ffffff | Full contrast ✦</p>
   </footer>
 
-  <script>
-    // simple interaction to show alert on button click (connects with contact)
-    const btn = document.getElementById('contactBtn');
-    if(btn) {
-      btn.addEventListener('click', () => {
-        const contactSection = document.getElementById('contact');
-        if(contactSection) {
-          contactSection.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          alert('Let’s create something bold together — hello@maya.design');
-        }
-      });
-    }
-    
-    // optional: smooth scroll for navbar links
-    const navLinks = document.querySelectorAll('.nav-links a');
-    navLinks.forEach(link => {
-      link.addEventListener('click', function(e) {
-        const hash = this.getAttribute('href');
-        if(hash === '#') return;
-        if(hash === '#skills' || hash === '#projects' || hash === '#contact') {
-          e.preventDefault();
-          const target = document.querySelector(hash);
-          if(target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-          }
-        }
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
-</html>
-```
+                </html>
+                
