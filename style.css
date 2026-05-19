@@ -1,3 +1,6 @@
+Here is the updated CSS that ensures all paragraph text has proper contrast against its background color.
+
+```css
 /* ═══════════════════════════════════════════════════
    PHILADELPHIA CHIKALIMBA — PORTFOLIO STYLESHEET
    style.css
@@ -491,7 +494,7 @@ ul { list-style: none; }
 .skill-card p {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--black);
+  color: var(--text-dark);
   line-height: 1.7;
 }
 
@@ -574,7 +577,7 @@ ul { list-style: none; }
 .project-body p {
   font-family: var(--font-body);
   font-size: 1.05rem;
-  color: var(--black);
+  color: var(--text-dark);
   line-height: 1.85;
   margin-bottom: 1.2rem;
   max-width: 680px;
@@ -742,7 +745,7 @@ ul { list-style: none; }
 .timeline-content p {
   font-family: var(--font-body);
   font-size: 0.95rem;
-  color: var(--black);
+  color: var(--cream-off);
   line-height: 1.75;
 }
 
@@ -811,7 +814,7 @@ ul { list-style: none; }
 .ach-badge-text p {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: var(--cream);
+  color: var(--cream-off);
   line-height: 1.65;
 }
 
@@ -938,8 +941,8 @@ ul { list-style: none; }
 .contact-card {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem 2rem;
+  gap: 1.5rem
+   padding: 1.5rem 2rem;
   background: var(--white);
   border: 1px solid rgba(168,144,112,0.25);
   border-radius: 8px;
@@ -1199,4 +1202,4 @@ ul { list-style: none; }
 
   .hero-photo { width: 200px; height: 200px; }
   .photo-ring { width: 240px; height: 240px; }
-}
+                         }
