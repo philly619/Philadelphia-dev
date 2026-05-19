@@ -439,7 +439,7 @@ ul { list-style: none; }
 }
 
 .skill-card {
-  background: var(--white);
+  background: var(--brown);
   border: 1px solid rgba(168,144,112,0.25);
   border-radius: 8px;
   padding: 2.2rem 1.8rem;
