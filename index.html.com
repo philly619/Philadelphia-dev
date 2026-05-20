@@ -17,7 +17,7 @@
 
     <link
         rel="stylesheet"
-        href="style.css"
+        href="styles.css"
     >
 
     <!-- PDF LIBRARY -->
