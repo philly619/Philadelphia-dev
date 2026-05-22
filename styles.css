@@ -1,0 +1,403 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.hidden {
+  display: none;
+}
+
+/* =========================================================
+   AUTH SCREEN
+========================================================= */
+
+.auth-screen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    135deg,
+    #0f172a,
+    #1e293b
+  );
+}
+
+.auth-card {
+  width: 400px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.auth-card h1 {
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.auth-card p {
+  margin-bottom: 20px;
+  color: #cbd5e1;
+}
+
+.auth-card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 12px;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
+
+.auth-card input::placeholder {
+  color: #94a3b8;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+#loginBtn {
+  background: #3b82f6;
+  color: white;
+}
+
+#loginBtn:hover {
+  background: #2563eb;
+}
+
+#signupBtn {
+  background: #10b981;
+  color: white;
+}
+
+#signupBtn:hover {
+  background: #059669;
+}
+
+#authMessage {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #f8fafc;
+}
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.sidebar {
+  width: 260px;
+  background: #111827;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nav-btn,
+.logout-btn {
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: #1f2937;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.3s ease;
+  font-size: 1rem;
+}
+
+.nav-btn:hover,
+.logout-btn:hover {
+  transform: translateY(-2px);
+}
+
+.nav-btn.active {
+  background: #3b82f6;
+}
+
+.logout-btn {
+  background: #ef4444;
+}
+
+/* =========================================================
+   CONTENT AREA
+========================================================= */
+
+.content-area {
+  flex: 1;
+  padding: 40px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+  margin-bottom: 40px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+}
+
+/* =========================================================
+   PORTFOLIO GRID
+========================================================= */
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  );
+  gap: 20px;
+}
+
+.portfolio-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-5px);
+}
+
+.portfolio-card h3 {
+  margin-bottom: 12px;
+  font-size: 1.3rem;
+}
+
+.portfolio-card p {
+  color: #cbd5e1;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.content-section {
+  display: none;
+}
+
+.active-section {
+  display: block;
+}
+
+/* =========================================================
+   CV BUILDER
+========================================================= */
+
+.cv-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.cv-builder input,
+.cv-builder textarea {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
+
+.cv-builder textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.cv-builder input::placeholder,
+.cv-builder textarea::placeholder {
+  color: #94a3b8;
+}
+
+.cv-builder button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.cv-builder button:hover {
+  background: #2563eb;
+}
+
+.cv-preview {
+  margin-top: 30px;
+  background: white;
+  color: black;
+  padding: 30px;
+  border-radius: 20px;
+  line-height: 1.8;
+}
+
+.cv-preview h1 {
+  margin-bottom: 10px;
+}
+
+.cv-preview h2 {
+  margin-bottom: 20px;
+  color: #334155;
+}
+
+.cv-preview h3 {
+  margin-top: 20px;
+}
+
+/* =========================================================
+   JOB APPLICATIONS
+========================================================= */
+
+.job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.job-form input,
+.job-form select {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #1e293b;
+  color: white;
+  outline: none;
+}
+
+.job-form button {
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #3b82f6;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.job-form button:hover {
+  background: #2563eb;
+}
+
+.jobs-list {
+  margin-top: 30px;
+  display: grid;
+  gap: 15px;
+}
+
+.job-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 18px;
+  transition: 0.3s ease;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+}
+
+.job-card h3 {
+  margin-bottom: 10px;
+}
+
+.job-card p {
+  margin-bottom: 6px;
+  color: #cbd5e1;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .dashboard {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .content-area {
+    padding: 25px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+}
+
+@media (max-width: 500px) {
+
+  .auth-card {
+    width: 90%;
+    padding: 30px;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+}
