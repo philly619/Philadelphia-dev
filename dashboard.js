@@ -1,10 +1,3 @@
-/* ============================================================
-   dashboard.js — Philadelphia Chikalimba Portfolio Dashboard
-   Supabase Auth + CV Builder + Portfolio + Job Application DB
-   Drop this file in the same folder as your index.html and
-   add <script src="dashboard.js"></script> before </body>
-   ============================================================ */
-
 /* ----------------------------------------------------------
    CONFIGURATION — replace with your actual Supabase values
    ---------------------------------------------------------- */
