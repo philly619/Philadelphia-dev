@@ -343,21 +343,6 @@ ul { list-style: none; }
   transform: translateY(-2px);
 }
 
-/* ── DASHBOARD BUTTON ── */
-.btn-dashboard {
-  background: var(--brown);
-  color: var(--cream);
-  border: 2px solid var(--gold);
-}
-
-.btn-dashboard:hover {
-  background: var(--gold);
-  color: var(--brown);
-  border-color: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(201,147,58,0.35);
-}
-
 /* Scroll indicator */
 .scroll-indicator {
   position: absolute;
