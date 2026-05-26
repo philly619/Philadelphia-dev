@@ -6,12 +6,13 @@
 // ============================================================
 
 const firebaseConfig = {
-  apiKey:            "YOUR_API_KEY",
-  authDomain:        "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId:         "YOUR_PROJECT_ID",
-  storageBucket:     "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId:             "YOUR_APP_ID"
+  apiKey:            "AIzaSyByjBAAQm20RP9_Zv5ebTJkLvdjHTaIHL4",
+  authDomain:        "philadelphia-portfolio.firebaseapp.com",
+  projectId:         "philadelphia-portfolio",
+  storageBucket:     "philadelphia-portfolio.firebasestorage.app",
+  messagingSenderId: "876541007477",
+  appId:             "1:876541007477:web:7fa22d0388f0fd484cca3c"
+   measurementId:    "G-H56QD53XY1"
 };
 
 // Initialize Firebase (compat SDK — already loaded in HTML)
