@@ -4,12 +4,12 @@ import { getFirestore, doc, getDoc, collection, addDoc, serverTimestamp }
 
 // ---- REPLACE 1: Your Firebase config ----
 const firebaseConfig = {
-  apiKey: "YOUR_FIREBASE_API_KEY",
-  authDomain: "YOUR_PROJECT.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyAHxZSmuttWE1OuYw2JZTUfZKfxATeAStE",
+  authDomain: "learn-it-bbd69.firebaseapp.com",
+  projectId: "learn-it-bbd69",
+  storageBucket: "learn-it-bbd69.firebasestorage.app",
+  messagingSenderId: "393926010027",
+  appId: "1:393926010027:web:34c4e2d6a41b9ee7e603ee"
 };
 
 // ---- REPLACE 2: Your Gemini API key ----
