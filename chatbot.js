@@ -13,14 +13,11 @@ const firebaseConfig = {
 };
 
 // ---- REPLACE 2: Your Gemini API key ----
-const GEMINI_API_KEY = "YOUR_GEMINI_API_KEY";
+const GEMINI_API_KEY = "AQ.Ab8RN6KkY1zmETll9CKl2mOsmw--RSIje1MhQGPNA4-a3MG4Iw';
 
 // ---- REPLACE 3: Your WhatsApp number (country code + number, no spaces) ----
-const WHATSAPP_NUMBER = "265XXXXXXXXX";
+const WHATSAPP_NUMBER = "265885665201";
 
-// ============================================
-// DO NOT EDIT BELOW THIS LINE
-// ============================================
 
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
