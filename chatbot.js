@@ -162,7 +162,7 @@ function updateMessage(id, text) {
 
 // Allow pressing Enter to send
 document.getElementById("chatInput").addEventListener("keypress", function(e) {
-  if (e.key === "Enter") sendMessage();
+  if (e.key === "Enter") sendMessage()
 });
 
 // Load context when page opens
